@@ -4,11 +4,18 @@
 Create a function `readFileContent(filePath)` that takes the path to a file as input and reads its content asynchronously using the `fs` module. The function should print the content to the console.
 
 **Function Signature:**
-```javascript
+
+const fs = require('fs');
+
 function readFileContent(filePath) {
-    // Implementation
+    fs.readFile(filePath, 'utf8', function(err, data) {
+        if (err) {
+            console.error(`Error reading file from disk: ${err}`);
+        } else {
+            console.log(`File content: ${data}`);
+        }
+    });
 }
-```
 
 **Expected Output:**
 ```
