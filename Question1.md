@@ -5,8 +5,16 @@ Create a function `readFileContent(filePath)` that takes the path to a file as i
 
 **Function Signature:**
 ```javascript
+const fs = require("node:fs");
 function readFileContent(filePath) {
     // Implementation
+    fs.readFile(filePath, "utf8", (err, data)=>{
+    if(err){
+        console.error(err);
+        return;
+    }
+    console.log(data);
+   });
 }
 ```
 
